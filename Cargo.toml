@@ -1,6 +1,8 @@
 [workspace]
 members=[
-    "tools/markdown"
+    "tools/markdown",
+    "tools/xdict",
+    "tools/demo"
 ]
 
 
