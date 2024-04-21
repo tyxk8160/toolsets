@@ -2,9 +2,9 @@
 members=[
     "tools/markdown",
     "tools/xdict",
-    "tools/demo"
+    "tools/demo",
+    "tools/string_art"
 ]
-
 
 
 [workspace.dependencies]

@@ -22,6 +22,7 @@ fn main() {
     markdown_it_footnote::add(parser);
 
     plugins::inline::add(parser);
+    plugins::unicode_codecs::add(parser);
 
     let content =
         fs::read_to_string(r"E:\docs\obsidian_orange/101-SlipBox/01-FleetingBox/202401312310-侵害课.md")
@@ -29,7 +30,10 @@ fn main() {
 
     let actual = parser.parse(&content.as_str()).render();
 
-    println!("{}", plugins::unicode_codecs::unicode2dec(actual));
+    fs::write(r"E:/temp/lc.html",&actual).expect("写文件失败");
+    println!("{}", actual);
+
+    // println!("{}", plugins::unicode_codecs::unicode2dec(actual));
 
     let nodes2 = parser.parse("**foo**, ==gg==");
     vistit(0, &nodes2);

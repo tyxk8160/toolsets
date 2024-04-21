@@ -5,7 +5,8 @@ use markdown_it::parser::block::builtin::BlockParserRule;
 use markdown_it::parser::core::CoreRule;
 use markdown_it::parser::inline::builtin::InlineParserRule;
 
-/// Add the full footnote plugin to the parser
+/// 
+/// UnicodeHtml无法处理`code`下面的text， 该部分直接由FenceCode渲染
 pub fn add(md: &mut MarkdownIt) {
     md.add_rule::<UnicodeHtml>()
         .after::<BlockParserRule>()
